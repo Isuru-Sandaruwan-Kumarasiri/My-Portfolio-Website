@@ -1,0 +1,407 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isuru Sandaruwan - Data Scientist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/Style.css">
+
+    <style>
+        
+    </style>
+</head>
+<body class="night-sky">
+    <!-- Loading Screen -->
+    <div id="loading" class="loading">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-indicator" class="scroll-indicator"></div>
+
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar fixed w-full top-0 z-50 px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text">
+                Isuru Sandaruwan
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-white hover:text-blue-400 font-medium">Home</a>
+                <a href="#about" class="nav-link text-white hover:text-blue-400 font-medium">About Me</a>
+                <a href="#blog" class="nav-link text-white hover:text-blue-400 font-medium">Blog</a>
+                <a href="#projects" class="nav-link text-white hover:text-blue-400 font-medium">Projects</a>
+                <a href="#contact" class="nav-link text-white hover:text-blue-400 font-medium">Contact</a>
+                <button onclick="downloadResume()" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 glow">
+                    Download Resume
+                </button>
+                
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-gray-900 md:hidden z-40 p-6">
+            <button id="close-menu" class="absolute top-4 right-4 text-white">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="mt-12 space-y-6">
+                <a href="#home" class="block text-white hover:text-blue-400 font-medium">Home</a>
+                <a href="#about" class="block text-white hover:text-blue-400 font-medium">About Me</a>
+                <a href="#blog" class="block text-white hover:text-blue-400 font-medium">Blog</a>
+                <a href="#projects" class="block text-white hover:text-blue-400 font-medium">Projects</a>
+                <a href="#contact" class="block text-white hover:text-blue-400 font-medium">Contact</a>
+                <button onclick="downloadResume()" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full font-medium">
+                    Download Resume
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <!-- Left Content -->
+                <div class="lg:w-1/2 mb-10 lg:mb-0 fade-in">
+                    <h1 class="text-4xl lg:text-6xl font-bold text-white mb-4">
+                        Hi, I'm <span class="gradient-text">Isuru</span>
+                    </h1>
+                    <div class="text-xl lg:text-2xl text-gray-300 mb-8">
+                        <span class="typewriter">Data Scientist</span>
+                    </div>
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
+                        Passionate about transforming data into meaningful insights through machine learning and innovative solutions.
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div class="flex space-x-6">
+                        <a href="https://github.com/Isuru-Sandaruwan-Kumarasiri" target="_blank" class="social-icon w-12 h-12 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center text-white glow">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon w-12 h-12 bg-blue-600 hover:bg-blue-500 rounded-full flex items-center justify-center text-white glow">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon w-12 h-12 bg-blue-500 hover:bg-blue-400 rounded-full flex items-center justify-center text-white glow">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://medium.com/@isurusandaruwan3840" target="_blank" class="social-icon w-12 h-12 bg-green-600 hover:bg-green-500 rounded-full flex items-center justify-center text-white glow">
+                            <i class="fab fa-medium text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Content - Profile Image -->
+                <div class="lg:w-1/2 flex justify-center fade-in">
+                    <div class="relative">
+                        <div class="w-80 h-80 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1 flex items-center justify-center glow">
+  <div class="w-full h-full bg-gray-800 rounded-full overflow-hidden">
+    <img src="./assets/images/myimage.jpg" alt="My Profile" 
+         class="w-full h-full object-cover scale-110">
+  </div>
+</div>
+
+
+                        <!-- Floating particles around image -->
+                        <div class="particle w-4 h-4 absolute top-10 left-10" style="animation-delay: 0s;"></div>
+                        <div class="particle w-3 h-3 absolute top-20 right-8" style="animation-delay: 2s;"></div>
+                        <div class="particle w-2 h-2 absolute bottom-16 left-16" style="animation-delay: 4s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Left - Image -->
+                <div class="lg:w-1/2 fade-in">
+                    <div class="relative">
+                        <div class="w-96 h-96 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-1 glow mx-auto">
+                           <div class="w-full h-full bg-gray-800 rounded-2xl overflow-hidden flex items-center justify-center">
+                               <img src="./assets/images/myimage.jpg" alt="My Profile"class="w-full h-full object-cover scale-110">
+                           </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right - Content -->
+                <div class="lg:w-1/2 fade-in">
+                    <h2 class="text-4xl font-bold text-white mb-6">About <span class="gradient-text">Me</span></h2>
+                    <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+                        <p>
+                            Hi, I'm <strong class="text-white">Isuru Sandaruwan Kumarasiri</strong> from Ratnapura, Sri Lanka, 
+                            an undergraduate at the <strong class="text-white">University of Peradeniya</strong>. I'm passionate about 
+                            <strong class="text-blue-400">machine learning, deep learning, cloud computing, and data engineering</strong>, 
+                            with a strong interest in transforming data into meaningful insights.
+                        </p>
+                        <p>
+                            I enjoy exploring new technologies, building projects, and applying my skills to solve real-world problems. 
+                            My goal is to grow into a versatile professional who bridges data and innovation, while contributing to 
+                            impactful solutions in the ever-evolving tech world.
+                        </p>
+                    </div>
+                    
+                    <!-- Skills -->
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold text-white mb-4">Skills</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium">Machine Learning</span>
+                            <span class="px-4 py-2 bg-purple-600 text-white rounded-full text-sm font-medium">Deep Learning</span>
+                            <span class="px-4 py-2 bg-indigo-600 text-white rounded-full text-sm font-medium">Cloud Computing</span>
+                            <span class="px-4 py-2 bg-cyan-600 text-white rounded-full text-sm font-medium">Data Engineering</span>
+                            <span class="px-4 py-2 bg-green-600 text-white rounded-full text-sm font-medium">Python</span>
+                            <span class="px-4 py-2 bg-red-600 text-white rounded-full text-sm font-medium">Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section-padding relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center  fade-in">
+                <h2 class="text-4xl font-bold text-white mb-4">My <span class="gradient-text">Blog</span></h2>
+                <p class="text-gray-400 text-lg">Latest articles from Medium</p>
+            </div>
+
+            <div class="relative ">
+                <!-- Navigation Buttons -->
+                <button id="blog-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-blue-600 hover:bg-blue-500 rounded-full flex items-center justify-center text-white glow transition-all duration-300">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="blog-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-blue-600 hover:bg-blue-500 rounded-full flex items-center justify-center text-white glow transition-all duration-300">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Blog Carousel -->
+                <div id="blog-carousel" class="blog-carousel flex overflow-x-auto space-x-6 pb-4 justify-center ">
+                    <!-- Blog posts will be loaded here -->
+                    <div class="flex-none w-80 card-hover bg-gray-800 rounded-xl overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                            <i class="fas fa-blog text-4xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Machine Learning Insights</h3>
+                            <p class="text-gray-400 mb-4">Exploring the latest trends in ML and AI technologies...</p>
+                            <a href="https://medium.com/@isurusandaruwan3840" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium">
+                                Read More <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex-none w-80 card-hover bg-gray-800 rounded-xl overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-green-500 to-blue-600 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-4xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Data Science Journey</h3>
+                            <p class="text-gray-400 mb-4">My experience transitioning into data science field...</p>
+                            <a href="https://medium.com/@isurusandaruwan3840" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium">
+                                Read More <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex-none w-80 card-hover bg-gray-800 rounded-xl overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                            <i class="fas fa-cloud text-4xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Cloud Computing</h3>
+                            <p class="text-gray-400 mb-4">Building scalable solutions with cloud technologies...</p>
+                            <a href="https://medium.com/@isurusandaruwan3840" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium">
+                                Read More <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-4xl font-bold text-white mb-4">My <span class="gradient-text">Projects</span></h2>
+                <p class="text-gray-400 text-lg">Some of my recent work</p>
+            </div>
+
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="card-hover bg-gray-800 rounded-xl overflow-hidden fade-in">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center">
+                        <i class="fas fa-brain text-5xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Sentiment Analysis Azure WebApp</h3>
+                        <p class="text-gray-400 mb-4">A machine learning web application for sentiment analysis deployed on Azure cloud platform.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-600 text-white rounded-full text-sm">Azure</span>
+                            <span class="px-3 py-1 bg-green-600 text-white rounded-full text-sm">ML</span>
+                            <span class="px-3 py-1 bg-purple-600 text-white rounded-full text-sm">Python</span>
+                        </div>
+                        <a href="https://sentimentanalysismlproject-akdqfreagceyaygt.canadacentral-01.azurewebsites.net/" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium">
+                            View Project <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="card-hover bg-gray-800 rounded-xl overflow-hidden fade-in">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                        <i class="fas fa-blog text-5xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Responsive Blogger Site - MERN Stack</h3>
+                        <p class="text-gray-400 mb-4">A fully responsive blogging platform built with MongoDB, Express.js, React, and Node.js.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-green-600 text-white rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-yellow-600 text-white rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-blue-600 text-white rounded-full text-sm">MongoDB</span>
+                        </div>
+                        <a href="https://github.com/Isuru-Sandaruwan-Kumarasiri/Project-Blogger_Site.git" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium">
+                            View Code <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="card-hover bg-gray-800 rounded-xl overflow-hidden fade-in">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
+                        <i class="fas fa-users text-5xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Student Management System</h3>
+                        <p class="text-gray-400 mb-4">A comprehensive student management system built with C# and MySQL database.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-600 text-white rounded-full text-sm">C#</span>
+                            <span class="px-3 py-1 bg-blue-600 text-white rounded-full text-sm">MySQL</span>
+                            <span class="px-3 py-1 bg-gray-600 text-white rounded-full text-sm">.NET</span>
+                        </div>
+                        <a href="https://github.com/Isuru-Sandaruwan-Kumarasiri/C-Project.git" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium">
+                            View Code <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-4xl font-bold text-white mb-4">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="text-gray-400 text-lg">Let's discuss your next project</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="fade-in">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label class="block text-white font-medium mb-2">Your Name</label>
+                            <input type="text" name="name" required class="form-input w-full px-4 py-3 rounded-lg text-white focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-white font-medium mb-2">Your Email</label>
+                            <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-lg text-white focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-white font-medium mb-2">Your Message</label>
+                            <textarea name="message" rows="5" required class="form-input w-full px-4 py-3 rounded-lg text-white focus:outline-none resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-3 rounded-lg font-medium transition-all duration-300 glow">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="fade-in">
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold mb-1">Email</h3>
+                                <p class="text-gray-400">s20426@sci.pdn.ac.lk</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold mb-1">Address</h3>
+                                <p class="text-gray-400">Near the Damme Bridge, Damme, Elapatha, Ratnapura</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold mb-1">Phone</h3>
+                                <p class="text-gray-400">0722593687</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 mb-4 md:mb-0">
+                    <p>&copy; 2025 Isuru Sandaruwan Kumarasiri. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/Isuru-Sandaruwan-Kumarasiri" target="_blank" class="social-icon text-gray-400 hover:text-white">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon text-gray-400 hover:text-white">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon text-gray-400 hover:text-white">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://medium.com/@isurusandaruwan3840" target="_blank" class="social-icon text-gray-400 hover:text-white">
+                        <i class="fab fa-medium text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top fixed bottom-6 right-6 w-12 h-12 bg-blue-600 hover:bg-blue-500 rounded-full flex items-center justify-center text-white glow z-50">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- External JavaScript -->
+    <script src="/Script.js"></script>
+</body>
+</html>
